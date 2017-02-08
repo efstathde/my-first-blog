@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<hmtl>
+    <head>
+        <title>My django blog</title>
+        <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+        <style>
+            body {
+                text-align: center;
+                font-family: 'Pangolin', cursive;
+            }
+            h1 {
+                color: deepskyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to my first Django Blog</h1>
+        {% for post in posts %}
+            <div class="post">
+                <p class="date">published: {{ post.published_date }}</p>
+                <h1 class="postTitle"><a href="">{{ post.title }}</a></h1>
+                <p class="postBody">{{ post.text | linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</hmtl>
